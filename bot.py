@@ -3,10 +3,10 @@ from aiogram import Bot, Dispatcher, types
 from aiogram.utils.keyboard import InlineKeyboardBuilder
 from aiogram.filters import Command
 from aiogram.types import FSInputFile
-import asyncio
+import os
 
-API_TOKEN = "8307035152:AAH2l9x3KunTdAlsCndQ7qNgk-55W6T9Res"
-OWNER_CHAT_ID = 481282193  # <--- Замените на свой ID!
+API_TOKEN = os.getenv("API_TOKEN")
+OWNER_CHAT_ID = int(os.getenv("OWNER_CHAT_ID"))
 
 logging.basicConfig(level=logging.INFO)
 bot = Bot(token=API_TOKEN)
